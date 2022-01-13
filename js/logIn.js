@@ -37,37 +37,43 @@ function form() {
   const btn = document.createElement("button");
   btn.className = "btn-form";
   btn.append("Войти");
-  btn.type = "submit";
+  btn.type = "button";
   form.append(btn);
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    const name = userName.value;
-    const password = userPassword.value;
-    if (
-      userName.value === localStorage.getItem("name") &&
-      userPassword.value === localStorage.getItem("password")
-    ) {
-      form.remove();
-      if (form.remove) {
+  btn.addEventListener("click", () => {
+    function signIn() {
+      let user = userName.value;
+      let pwd = userPassword.value;
+      let users = JSON.parse(localStorage.getItem("users")) || [];
+      let exist =
+        users.length &&
+        JSON.parse(localStorage.getItem("users")).some(
+          (el) =>
+            el.user.toLowerCase() == user.toLowerCase() &&
+            el.pwd.toLowerCase() == pwd.toLowerCase()
+        );
+
+      if (!exist) {
+        const mod = document.createElement("div");
+        const modText = document.createElement("p");
+        const closeMod = document.createElement("span");
+        mod.className = "mod";
+        modText.append(
+          "Проверьте правильность написания Имя пользователя или пароль. Возможно вы не зарегистрированы"
+        );
+        mod.append(modText);
+        modText.append(closeMod);
+        document.body.append(mod);
+        closeMod.className = "closeMod";
+        closeMod.append("x");
+        closeMod.addEventListener("click", () => {
+          mod.remove();
+        });
+      } else {
         home();
+        form.remove();
       }
-    } else {
-      const mod = document.createElement("div");
-      const modText = document.createElement("p");
-      const closeMod = document.createElement("span");
-      mod.className = "mod";
-      modText.append(
-        "Проверьте правильность написания Имя пользователя или пароль. Возможно вы не зарегистрированы"
-      );
-      mod.append(modText);
-      modText.append(closeMod);
-      document.body.append(mod);
-      closeMod.className = "closeMod";
-      closeMod.append("x");
-      closeMod.addEventListener("click", () => {
-        mod.remove();
-      });
     }
+    signIn();
   });
 
   //регистрация

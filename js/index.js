@@ -8,6 +8,8 @@ header.append(logo);
 logo.classList = "logo";
 logo.append("JSgram");
 
+//home
+
 function link() {
   const links = document.createElement("ul");
   header.append(links);
@@ -31,6 +33,7 @@ function link() {
     links.append(linkSite);
   }
 }
+
 link();
 
 import { form } from "./logIn.js";

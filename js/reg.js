@@ -37,16 +37,58 @@ function reg() {
   const regBtn = document.createElement("button");
   regBtn.className = "regBtn";
   regBtn.append("Зарегистрироваться");
-  regBtn.type = "submit";
+  regBtn.type = "button";
   formReg.append(regBtn);
 
-  formReg.addEventListener("submit", (e) => {
-    e.preventDefault();
-    const name = regName.value;
-    const password = regPassword.value;
-    localStorage.setItem("name", name);
-    localStorage.setItem("password", password);
-    formReg.remove();
+  regBtn.addEventListener("click", () => {
+    const signUp = () => {
+      let user = regName.value.toLowerCase();
+      let pwd = regPassword.value.toLowerCase();
+
+      let users = JSON.parse(localStorage.getItem("users")) || [];
+
+      let exist =
+        users.length &&
+        JSON.parse(localStorage.getItem("users")).some(
+          (data) =>
+            data.user.toLowerCase() == user.toLowerCase() &&
+            data.pwd.toLowerCase() == pwd.toLowerCase()
+        );
+
+      if (!exist) {
+        users.push({ user, pwd });
+        localStorage.setItem("users", JSON.stringify(users));
+
+        const mod = document.createElement("div");
+        const modText = document.createElement("p");
+        const closeMod = document.createElement("span");
+        mod.className = "mod";
+        modText.append("Вы успешно создали аккаунт");
+        mod.append(modText);
+        modText.append(closeMod);
+        document.body.append(mod);
+        closeMod.className = "closeMod";
+        closeMod.append("x");
+        closeMod.addEventListener("click", () => {
+          mod.remove();
+        });
+      } else {
+        const mod = document.createElement("div");
+        const modText = document.createElement("p");
+        //const closeMod = document.createElement("span");
+        mod.className = "mod";
+        document.body.append(mod);
+        mod.append(modText);
+        modText.append("Такой аккаунт уже есть");
+        function modClose() {
+          mod.remove();
+        }
+        setTimeout(modClose, 1000);
+      }
+
+      formReg.remove();
+    };
+    signUp();
   });
 }
 
