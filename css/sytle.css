@@ -130,7 +130,7 @@ ul li{
 	background-color: rgba(0, 0, 0, 0.3);
 	display: flex;
 	flex-flow: column nowrap;
-	justify-content: center; /* см. ниже */
+	justify-content: center; 
 	align-items: center;
 	z-index: 99;
 }
@@ -138,6 +138,7 @@ ul li{
  background: #fff;
  width: 400px;
  max-width: 100%;
+ text-align: center;
  padding:25px;
  border-radius: 5px;
  position: relative;
