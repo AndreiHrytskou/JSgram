@@ -21,16 +21,16 @@ function form() {
 
   // password
   const userPasswordLabel = document.createElement("label");
-  userPasswordLabel.setAttribute("for", "password");
   const userPassword = document.createElement("input");
+  userPasswordLabel.setAttribute("for", "password");
   userPasswordLabel.className = "userPasswordLabel";
+  userPasswordLabel.append("Введите пароль");
   userPassword.type = "password";
   userPassword.id = "password";
   userPassword.required = true;
   userPassword.placeholder = "Пароль";
   userPassword.className = "userPassword";
   form.append(userPasswordLabel);
-  userPasswordLabel.append("Введите пароль");
   form.append(userPassword);
 
   //button войти
