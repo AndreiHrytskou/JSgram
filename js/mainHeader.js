@@ -1,21 +1,9 @@
-function home() {
-  const links = document.querySelector("ul");
-  links.style.display = "flex";
-  const main = document.createElement("div");
-  document.body.append(main);
-  main.className = "main";
-  const mainHeader = document.createElement("div");
-  mainHeader.className = "mainHeader";
-  main.append(mainHeader);
-
-  //аватар
+function avatar() {
   const inputImage = document.createElement("input");
   inputImage.type = "file";
   inputImage.style.opacity = 0;
   inputImage.style.cursor = "pointer";
   inputImage.style.width = "300px";
-  inputImage.style.marginLeft = "50px";
-  inputImage.style.zIndex = "9";
   mainHeader.append(inputImage);
 
   const img = document.createElement("img");
@@ -63,5 +51,3 @@ function home() {
 
   fetchimage();
 }
-
-export { home };
