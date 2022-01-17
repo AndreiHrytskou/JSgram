@@ -8,7 +8,7 @@ function form() {
   const userNameLabel = document.createElement("label");
   userNameLabel.setAttribute("for", "name");
   userNameLabel.className = "userNameLabel";
-  userNameLabel.for = "name";
+
   userNameLabel.append("Введите имя пользователя");
   form.append(userNameLabel);
 
