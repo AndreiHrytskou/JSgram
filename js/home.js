@@ -17,7 +17,7 @@ function home() {
   inputImage.type = "file";
   inputImage.style.opacity = 0;
   inputImage.style.cursor = "pointer";
-  inputImage.style.width = "300px";
+  inputImage.style.width = "310px";
   inputImage.style.marginLeft = "50px";
   inputImage.style.zIndex = "9";
   containerAvatar.append(inputImage);
@@ -26,8 +26,8 @@ function home() {
   img.className = "avatar";
   containerAvatar.append(img);
 
-  const result = document.createElement("div");
-  containerAvatar.append(result);
+  //   const result = document.createElement("div");
+  //   containerAvatar.append(result);
 
   inputImage.addEventListener("change", function () {
     const file = this.files[0];
