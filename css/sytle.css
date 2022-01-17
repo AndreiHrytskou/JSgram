@@ -165,10 +165,143 @@ ul li{
 	width: 100%;
 	height: 400px;
 }
+.containerAvatar{
+	width: 30%;
+	display: flex;
+}
 .avatar{
 	position: absolute;
 	width: 300px;
 	height: 300px;
 	border-radius: 50%;
+	border: 2px solid black;
+	padding: 3px;
 	margin: 50px;
+}
+.containerProfile{
+	background-color: yellow;
+	display: flex;
+	width: 70%;
+	height: 400px;
+	position: relative;
+}
+.editProfile{
+	position: absolute;
+	top: 50px;
+	right: 50px;
+	border-radius: 5px;
+	cursor: pointer;
+	padding: 10px 25px;
+	border: 2px solid red;
+}
+.userAcc{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	padding: 25px 100px;
+}
+.containerForm{
+	position: fixed;
+	right: 0;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	background-color: rgba(0, 0, 0, 0.3);
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: center; 
+	align-items: center;
+	z-index: 99;
+}
+.profile{
+	font-family: 'Comfortaa', cursive;
+	background: #fff;
+	width: 1200px;
+	max-width: 100%;
+	text-align: center;
+	padding:25px;
+	border-radius: 5px;
+	position: relative;
+}
+.titleUser{
+	background: #fff;
+}
+.maleLabel,.femaleLabel,.noneLabel{
+	background: #e9ffad
+}
+
+.nickSection,.genderSection{
+	background: #fff;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-bottom: 20px;
+}
+.nickLabel,.familySectionTitle,.genderSectionTitle{
+	background: #fff;
+	font-size: 18px;
+	margin-bottom: 10px;
+}
+.nick{
+	background: #fff;
+	width: 250px;
+	font-size: 18px;
+	
+}
+.genderContainer{
+	background: #fff;
+	display: flex;
+}
+.genderBtn,.genderBtn,.genderBtn3{
+	background: #fff;
+	display: inline-block;
+	margin-right: 10px;
+}
+
+.genderBtn,.genderBtn,.genderBtn3 label{
+	background: #fff;
+	display: inline-block;
+	padding: 0px 15px;
+	line-height: 34px;
+	border: 1px solid #999;
+	border-radius: 6px;
+	user-select: none;
+}
+.genderBtn,.genderBtn,.genderBtn3 input[type=radio]:checked + label{
+	background: #e9ffad;
+}
+
+
+.familySection select{
+	background: #fff;
+	width: 300px;
+	font-size: 16px;
+	font-family: 'Comfortaa', cursive;
+}
+.familySection{
+	background: #fff;
+	margin-bottom: 25px;
+}
+.profileBtn{
+	cursor: pointer;
+	padding: 5px 25px;
+	border: 2px solid #999;
+	border-radius: 5px;
+	background: #e9ffad;
+
+}
+.closeProfile{
+	background: #fff;
+	position: absolute;
+	top: 15px;
+	right: 20px;
+	cursor: pointer;
+}
+
+.nickName{
+	font-size: 25px;
+}
+.genderUserStatus,.familyStatus{
+	font-size: 20px;
 }
