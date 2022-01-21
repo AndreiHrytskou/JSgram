@@ -100,14 +100,12 @@ ul li{
 	
 
 .btn-form{
-	font-family: 'Comfortaa', cursive;
-	font-weight: bold;
-	padding: 5px 15px;
 	margin: 10px;
-	border-radius: 5px;
+	
 }
 
-.reg-form{
+.reg-form,
+.btn-form{
 	font-family: 'Comfortaa', cursive;
 	font-weight: bold;
 	padding: 5px 15px;
